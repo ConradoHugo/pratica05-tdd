@@ -35,4 +35,5 @@ public class CalculadoraNotaTest {
         CalculadoraNota calc = new CalculadoraNota();
         assertThrows(IllegalArgumentException.class, () -> calc.calcularNotaFinal(35, 20, 30));
     }
+
 }
