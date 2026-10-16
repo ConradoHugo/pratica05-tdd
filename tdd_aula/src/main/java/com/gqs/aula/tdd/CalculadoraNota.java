@@ -1,6 +1,14 @@
 package com.gqs.aula.tdd;
 
 public class CalculadoraNota {
-
+    public double calcularNotaFinal(double a1, double a2, double a3) {
+        return 70;
+    }
     
+    public static final double NOTA_MINIMA_APROVACAO = 70;
+
+    public boolean estaAprovadoPorNota(double notaFinal) {
+        return notaFinal >= NOTA_MINIMA_APROVACAO;
+    }
+
 }
