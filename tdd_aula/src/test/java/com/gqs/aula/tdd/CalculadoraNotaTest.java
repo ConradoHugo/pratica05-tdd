@@ -36,4 +36,29 @@ public class CalculadoraNotaTest {
         assertThrows(IllegalArgumentException.class, () -> calc.calcularNotaFinal(35, 20, 30));
     }
 
+    @Test
+void deveSubstituirA1PelaNotaAI() {
+    CalculadoraNota calc = new CalculadoraNota();
+    assertEquals(75, calc.aplicarAI(10, 20, 30, 25));
+}
+
+@Test
+void deveSubstituirA2PelaNotaAI() {
+    CalculadoraNota calc = new CalculadoraNota();
+    assertEquals(75, calc.aplicarAI(20, 10, 30, 25));
+}
+
+@Test
+void deveManterAsNotasQuandoAIForMenor() {
+    CalculadoraNota calc = new CalculadoraNota();
+    assertEquals(60, calc.aplicarAI(20, 25, 15, 10));
+}
+
+@Test
+void deveRejeitarNotaAIInvalida() {
+    CalculadoraNota calc = new CalculadoraNota();
+    assertThrows(IllegalArgumentException.class,
+            () -> calc.aplicarAI(10, 20, 30, 35));
+}
+
 }

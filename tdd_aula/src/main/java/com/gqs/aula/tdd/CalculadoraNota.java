@@ -21,6 +21,22 @@ public class CalculadoraNota {
         }
     }
 
+    public double aplicarAI(double a1, double a2, double a3, double notaAI) {
+    if (notaAI < 0 || notaAI > 30) {
+        throw new IllegalArgumentException("A nota da AI deve estar entre 0 e 30");
+    }
+
+    if (notaAI <= Math.min(a1, a2)) {
+        return a1 + a2 + a3;
+    }
+
+    if (a1 <= a2) {
+        return notaAI + a2 + a3;
+    }
+
+    return a1 + notaAI + a3;
+}
+
 }
 
 
